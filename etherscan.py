@@ -2,7 +2,7 @@
 
 """Etherscan API module"""
 
-from .api_request import Api
+from .api_request import ApiReq
 
 BASE_API = 'https://api.etherscan.io/api'
 API_TYPE = '?module=account&action=balance'
@@ -10,7 +10,7 @@ API_ETH = BASE_API + API_TYPE + \
     '&address=:wallet:&tag=latest&apikey=:api_key:'
 
 
-class EtherWallet():
+class EthWallet():
     def __init__(self, api_key, wallet):
         """Init of EtherWallet class."""
         self.__api_key = api_key
