@@ -17,9 +17,10 @@ class RvnWallet():
         data_json = api.api_request(cust_url)
         self.__last_error = api.last_error
         if data_json is not None:
-            if 'balance' in data_json:
-                self.__balance = float(data_json['balance'])
-                return True
+            if data_json['balance'] is None:
+                return None
+            self.__balance = float(data_json['balance'])
+            return True
 
         if self.__last_error is None:
             self.__last_error = 'Can\'t retrieve json result'
