@@ -2,7 +2,7 @@
 
 from .api_request import ApiReq
 
-BASE_API = 'https://ravencoin.network/api/addr/{wallet}'
+BASE_API = 'https://rvn.cryptoscope.io/api/getbalance/?address={wallet}'
 
 
 class RvnWallet():
